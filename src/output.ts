@@ -8,7 +8,9 @@ export function outputValues(
 
     for (const [key, value] of values) {
         if (style === "quiet") {
-            console.log(JSON.stringify(value));
+            console.log(
+                typeof value === "string" ? value : JSON.stringify(value),
+            );
             continue;
         }
 
@@ -38,11 +40,7 @@ export function outputValues(
 
 export function readValueAsJson(value: string): unknown {
     try {
-        if (typeof value === "string") {
-            return value;
-        } else {
-            return JSON.parse(value);
-        }
+        return JSON.parse(value);
     } catch {
         return value;
     }
