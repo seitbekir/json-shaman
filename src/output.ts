@@ -38,7 +38,11 @@ export function outputValues(
 
 export function readValueAsJson(value: string): unknown {
     try {
-        return JSON.parse(value);
+        if (typeof value === "string") {
+            return value;
+        } else {
+            return JSON.parse(value);
+        }
     } catch {
         return value;
     }

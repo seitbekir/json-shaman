@@ -1,6 +1,6 @@
 {
     "name": "json-shaman",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A powerful CLI tool for manipulating JSON files with ease.",
     "type": "module",
     "main": "./dist/index.cjs",
