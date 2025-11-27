@@ -1,13 +1,13 @@
 {
     "name": "json-shaman",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A powerful CLI tool for manipulating JSON files with ease.",
     "type": "module",
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts",
+    "main": "./dist/index.cjs",
+    "types": "./dist/index.d.cts",
     "scripts": {
         "dev": "tsx ./src/index.ts",
-        "build": "tsup src/index.ts --format cjs,esm --dts --out-dir dist --clean",
+        "build": "tsup src/index.ts --format cjs --dts --out-dir dist --clean",
         "biome:fix": "biome format --write",
         "biome:check": "biome check",
         "lint": "pnpm biome:check",
@@ -15,7 +15,7 @@
         "prepare": "husky install"
     },
     "bin": {
-        "jsons": "./dist/index.js"
+        "jsons": "./dist/index.cjs"
     },
     "files": [
         "dist/**/*"
