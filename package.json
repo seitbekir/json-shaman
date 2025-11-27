@@ -1,0 +1,47 @@
+{
+    "name": "json-shaman",
+    "version": "1.0.0",
+    "description": "A powerful CLI tool for manipulating JSON files with ease.",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "dev": "tsx ./src/index.ts",
+        "build": "tsup src/index.ts --format cjs,esm --dts --out-dir dist --clean",
+        "biome:fix": "biome format --write",
+        "biome:check": "biome check",
+        "lint": "pnpm biome:check",
+        "format": "pnpm biome:fix",
+        "prepare": "husky install"
+    },
+    "bin": {
+        "jsons": "./dist/index.js"
+    },
+    "files": [
+        "dist/**/*"
+    ],
+    "keywords": [
+        "json",
+        "cli",
+        "json-cli",
+        "json-shaman"
+    ],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.12.1",
+    "devDependencies": {
+        "@biomejs/biome": "2.3.7",
+        "@types/edit-json-file": "1.7.4",
+        "@types/node": "24.10.1",
+        "@types/semver": "7.7.1",
+        "husky": "9.1.7",
+        "lint-staged": "16.2.7",
+        "tsup": "8.5.1",
+        "tsx": "4.20.6",
+        "typescript": "5.9.3"
+    },
+    "dependencies": {
+        "commander": "14.0.2",
+        "edit-json-file": "1.8.1"
+    }
+}
